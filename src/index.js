@@ -14,17 +14,36 @@ export default (engine, ms, maxWait = null) => {
     } catch (err) {
         // ignore error
     }
-    if (hasWindow && window.addEventListener) {
-        window.addEventListener('beforeunload', () => {
-            if (!lastTimeout) {
-                return;
-            }
 
-            lastTimeout = clearTimeout(lastTimeout);
-            maxTimeout = clearTimeout(maxTimeout);
-            lastReject = null;
-            engine.save(lastState);
-        });
+
+
+    const forceSave = () => {
+        if (!lastTimeout) {
+            return;
+        }
+
+        lastTimeout = clearTimeout(lastTimeout);
+        maxTimeout = clearTimeout(maxTimeout);
+        lastReject = null;
+        engine.save(lastState);
+    };
+
+    const appStateChanges = (nextAppState) => {
+        if (nextAppState !== 'active') {
+            forceSave();
+        }
+    };
+
+    try {
+        const { AppState } = require('react-native');
+
+        AppState.addEventListener('change', appStateChanges);
+    } catch (err) {
+      // ignore error
+    }
+
+    if (hasWindow && window.addEventListener) {
+        window.addEventListener('beforeunload', forceSave);
     }
 
     return {

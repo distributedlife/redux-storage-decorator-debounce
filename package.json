@@ -1,6 +1,6 @@
 {
-  "name": "redux-storage-decorator-debounce",
-  "version": "1.1.3",
+  "name": "redux-storage-decorator-debounce-react-native",
+  "version": "0.0.1",
   "description": "Delay and merge save opertations of redux-storage",
   "main": "build/index.js",
   "scripts": {
@@ -8,18 +8,20 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/react-stack/redux-storage-decorator-debounce.git"
+    "url": "https://github.com/distributedlife/redux-storage-decorator-debounce.git"
   },
-  "bugs": "https://github.com/react-stack/redux-storage-decorator-debounce/issues",
-  "homepage": "https://github.com/react-stack/redux-storage-decorator-debounce",
+  "bugs": "https://github.com/distributedlife/redux-storage-decorator-debounce/issues",
+  "homepage": "https://github.com/distributedlife/redux-storage-decorator-debounce",
   "keywords": [
     "redux",
     "redux-storage",
-    "redux-storage-decorator"
+    "redux-storage-decorator",
+    "react-native"
   ],
   "author": [
     "Michael Contento <mail@michaelcontento.de>",
-    "Guns <gunjan.soni2002@gmail.com>"
+    "Guns <gunjan.soni2002@gmail.com>",
+    "Ryan Boucher <ryan.boucher@distributedlife.com>"
   ],
   "files": [
     "build/",
@@ -30,6 +32,9 @@
     "extends": "michaelcontento"
   },
   "license": "MIT",
+  "peerDependencies": {
+    "react-native": "^0.42.x"
+  },
   "devDependencies": {
     "babel-cli": "^6.11.4",
     "babel-core": "^6.13.2",
