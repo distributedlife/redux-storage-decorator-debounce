@@ -15,8 +15,6 @@ export default (engine, ms, maxWait = null) => {
         // ignore error
     }
 
-
-
     const forceSave = () => {
         if (!lastTimeout) {
             return;
