@@ -33,7 +33,7 @@
   },
   "license": "MIT",
   "peerDependencies": {
-    "react-native": "^0.42.x"
+    "react-native": "^0.x"
   },
   "devDependencies": {
     "babel-cli": "^6.11.4",
